@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang chủ</title>
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/128/3512/3512709.png"/>
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+    
+    <!-- Popper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        .table-edit {
+            width: auto;
+            margin-top: 100px;
+            font-size: 15px;
+        }
+        .table-stadium {
+            margin: 0 200px;
+            text-align: center;
+           
+        }
+        .thead th {
+            border: 2px solid #dee2e6;
+            padding: 10px 10px;
+            text-transform: uppercase;
+        }
+        .tbody td {
+            border: 1px solid #dee2e6;
+            padding: 0px 10px;
+        }
+        .container-create {
+            margin: 70px auto;
+            width: 30rem;
+            padding: 15px 15px;
+            box-shadow: 0 15px 35px 0 #777777;
+            
+        }
+        .container-content{
+            
+        }
+        h3 {
+            text-align: center;
+        }
+        .where {
+            height: 200px;
+        }
+        .revenue {
+            display: inline;
+            
+        }
+        .revenue-content {
+            padding-left: 100px;
+            font-size: 20px;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="home-header-container">
+        <div class="home-header-content">
+            <div class="left-container">
+              <h1>
+                <a href="/" class="logo">
+                  <img src="https://datsantructuyen.vn/images/config/logo_1658658270.png" alt="logo">
+                </a>
+              </h1>     
+            </div>
+            <div class="center-container">
+                <ul id="navbar-1">
+                    <li class="hello-1"><a href="/home?page=1" class="hello">Sân bóng</a></li>
+                    <li class="hello-1"><a href="/edit" class="hello">Chỉnh thông tin sân</a></li>
+                    <li class="hello-1"><a href="/revenue" class="hello">Doanh thu</a></li>
+                </ul>
+            </div>
+            <div class="right-container">
+                    <div class="list-log-in">
+                      <a href="/login-user">
+                        <div class="list-picture-log-in">Hoàng</div>
+                      </a>
+                    </div>
+            </div>
+        </div>
+        
+        <div class="clear"></div>
+    </div>
+    
+    <!-- content -->
+    
+    
+    <div class="table-edit">
+        <table class="table-stadium">
+            <thead class="thead">
+              <tr>
+                <th scope="col">Người đặt</th>
+                <th scope="col">Số điện thoại</th>
+                <th scope="col">Email người đặt</th>
+                <th scope="col">Sân đặt</th>
+                <th scope="col">Ngày đặt</th>
+                <th scope="col">Thời gian</th>
+
+
+                <!-- <th scope="col">image</th> -->
+                <th scope="col">giá tiền</th>
+              </tr>
+            </thead>
+            <tbody class="tbody">
+              
+              <% for(var i=0; i < dataTable_2.length; i++) { %>
+                <tr>
+                  <td><%= dataTable_2[i].name %></td>
+                  <td><%= dataTable_2[i].phoneNumber %></td>
+                  <td><%= dataTable_2[i].email %></td>
+                  <td><%= dataTable_2[i].nameStadium %></td>
+                  <td><%= dataTable_2[i].date %></td>
+                  <td><%= dataTable_2[i].time %></td>
+
+
+
+                  <!-- <td><%= dataTable_2[i].image %></td> -->
+                  <td>
+                    <h5>500.000</h5>
+                        
+                    <!-- <button type="submit" class="btn btn-primary">Add new</button> -->
+                  </td>
+                </tr>
+                <% } %>
+            </tbody>
+          </table>
+    </div>
+    <!-- theem san -->
+    
+    <div class="revenue">
+        <div class="revenue-content">
+            <div>Doanh thu: <%= do_dai%></div>
+        </div>
+    </div>
+    <div class="where"></div>
+    <div class="top-ft">
+      <div class="top-ft-left">
+        <img width="" height="" class="logo_footer lazy after-lazy" alt="Ankaza.vn" src="https://datsantructuyen.vn/images/config/logo_chan_1658658538.png" style="opacity: 1; display: none;">
+      </div>
+      <div class="top-ft-center">
+        <div class="margin-lazy"> <a class="h1-footer">Đối tác thanh toán</a></div>
+       
+        <div class="margin-lazy">Vietcombak</div>
+        <div class="margin-lazy">Agribank</div>
+        <div class="margin-lazy">Momo</div>
+      </div>
+      <div class="top-ft-right">
+        <div class="margin-lazy"><a class="h1-footer">Thông tin liên hệ</a></div>
+        
+        <li class="margin-lazy"><a>Địa chỉ: Đại học Bách Khoa Hà Nội</a></li>
+        <li class="margin-lazy"><a>Điện thoại: 0946860802</a></li>
+        <li class="margin-lazy"><a>Email: hoang.nq203431@sis.hust.edu.vn</a></li>
+        <li class="margin-lazy"><a>Facebook: Hoang Nguyen</a></li>
+        
+        
+        
+      </div>
+    </div>
+    <div class="under-ft">
+      <div class="under-ft-text">All rights reserved 2023 BOOKING.COM</div>
+      
+    </div>
+</div>
+     
+    
+    
+</body>
+</html>

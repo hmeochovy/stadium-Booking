@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sân bóng đá</title>
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/128/3512/3512709.png"/>
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+   
+</head>
+<body>
+    <div class="home-header-container">
+        <div class="home-header-content">
+            <div class="left-container">
+              <h1>
+                <a href="/" class="logo">
+                  <img src="https://datsantructuyen.vn/images/config/logo_1658658270.png" alt="logo">
+                </a>
+              </h1>     
+            </div>
+            <div class="center-container">
+                <ul id="navbar-1">
+                    <li class="hello-1"><a href="/home?page=1" class="hello">Sân bóng</a></li>
+                    <li class="hello-1"><a href="/edit" class="hello">Chỉnh thông tin sân</a></li>
+                    <li class="hello-1"><a href="/revenue" class="hello">Doanh thu</a></li>
+                </ul>
+            </div>
+            <div class="right-container">
+                <div class="list-log-in">
+                  <a href="/login-user">
+                    <div class="list-picture-log-in">Hoàng</div>
+                  </a>
+                </div>
+        </div>
+        
+    </div>
+    <div class="clear"></div>
+</div>
+    <div class="breadcrumb">
+        <div class="breadcrum-container">
+            <div class="breadcrumbs_wrapper" itemscope="" itemtype="http://schema.org/WebPage">
+                <ul class="breadcrumb" itemscope="itemscope" itemtype="https://schema.org/BreadcrumbList">
+                    <li class="breadcrumb__item" itemprop="itemListElement" itemscope="itemscope" itemtype="http://schema.org/ListItem">
+                        <a title="Đặt sân trực tuyến" href="/" itemprop="item">
+                             <span itemprop="name">Trang chủ</span>
+                             <meta content="1" itemprop="position">
+                        </a>
+                        
+                    </li>
+                    <li class="breadcrumb__item" itemprop="itemListElement" itemscope="itemscope" itemtype="http://schema.org/ListItem">
+                                <a title="Sân Bóng đá" href="/home?page=1" itemprop="item">
+                                     <span itemprop="name">Sân Bóng đá</span>
+                                     <meta content="2" itemprop="position">
+                                </a>                
+                        </li>                               
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- content -->
+   <div class="main-wrapper">
+    <div class="container-main-wrapper">
+        <div class="products-cat">
+            <h1 class="title-h1">
+                Danh sách sân
+            </h1>
+            <div class="clear"></div>
+            <% for(let i=0; i < data.length; i++) { %>
+            <section class="products-cat-frame">
+                <div class="products-cat-frame-inner">
+                    <div class="product-grid">
+                        <div class="item">
+                            <figure class="product-image">
+                                <a href="/home">
+                                    <img src="<%= data[i].image%>" alt="san bong">
+                                </a>
+                            </figure>
+                            <div class="product-infor">
+                                <h3>
+                                    <a href="/" class="name-product"><%= data[i].name %></a>
+                                </h3>
+                                <div class="rate-item">
+                                    
+                                        <span class="star-on star">
+    <svg width="20px" height="20px" aria-hidden="true" data-prefix="fas" data-icon="star" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" class="svg-inline--fa fa-star fa-w-18"><path fill="currentColor" d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z" class=""></path></svg>
+</span>
+                                            <span class="star-on star">
+    <svg width="20px" height="20px" aria-hidden="true" data-prefix="fas" data-icon="star" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" class="svg-inline--fa fa-star fa-w-18"><path fill="currentColor" d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z" class=""></path></svg>
+</span>
+                                            <span class="star-on star">
+    <svg width="20px" height="20px" aria-hidden="true" data-prefix="fas" data-icon="star" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" class="svg-inline--fa fa-star fa-w-18"><path fill="currentColor" d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z" class=""></path></svg>
+</span>
+                                            <span class="star-on star">
+    <svg width="20px" height="20px" aria-hidden="true" data-prefix="fas" data-icon="star" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" class="svg-inline--fa fa-star fa-w-18"><path fill="currentColor" d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z" class=""></path></svg>
+</span>
+                                            <span class="star-on star">
+    <svg width="20px" height="20px" aria-hidden="true" data-prefix="fas" data-icon="star" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" class="svg-inline--fa fa-star fa-w-18"><path fill="currentColor" d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z" class=""></path></svg>
+</span>
+                                </div>
+                                <div class="address-item">
+                                    <strong>Địa chỉ: </strong>
+                                    <%= data[i].address %>
+                                </div>
+                                <div class="people-rate">
+                                    <div class="people-item">
+                                        <strong>description: </strong>
+                                        <%= data[i].description %>
+                                    </div>
+                                </div>
+                                <div class="prince-area">
+                                    <div class="price-text">
+                                        <strong>Giá tham khảo: </strong>
+                                    </div>
+                                    <div class="prince-min">400.000đ</div>
+                                    <div class="prince-max"> - 900.000đ</div>
+                                    <div class="unit">/trận</div>
+                                </div>
+                                <a href="/booking?id=<%= data[i].id%>">
+                                    <span class="book">Đặt sân</span>
+                                </a>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <% } %>
+        </div>
+    </div>
+   </div>
+        
+   
+   
+<div class="pagination">
+    <a href="/home?page=1" class="other-page" title="page 1"><span>1</span></a>
+    <a href="/home?page=2" class="other-page" title="page 2"><span>2</span></a>
+    <a href="" class="other-page" title="page 3"><span>3</span></a>
+    <a href="" class="other-page" title="page 4"><span>4</span></a>
+    <a href="" class="other-page" title="page "><span>...</span></a>
+    
+   </div>
+  <div id="footer">
+    <div class="top-ft">
+      <div class="top-ft-left">
+        <img width="" height="" class="logo_footer lazy after-lazy" alt="Ankaza.vn" src="https://datsantructuyen.vn/images/config/logo_chan_1658658538.png" style="opacity: 1; display: none;">
+      </div>
+      <div class="top-ft-center">
+        <div class="margin-lazy"> <a class="h1-footer">Đối tác thanh toán</a></div>
+       
+        <div class="margin-lazy">Vietcombak</div>
+        <div class="margin-lazy">Agribank</div>
+        <div class="margin-lazy">Momo</div>
+      </div>
+      <div class="top-ft-right">
+        <div class="margin-lazy"><a class="h1-footer">Thông tin liên hệ</a></div>
+        
+        <li class="margin-lazy"><a>Địa chỉ: Đại học Bách Khoa Hà Nội</a></li>
+        <li class="margin-lazy"><a>Điện thoại: 0946860802</a></li>
+        <li class="margin-lazy"><a>Email: hoang.nq203431@sis.hust.edu.vn</a></li>
+        <li class="margin-lazy"><a>Facebook: Hoang Nguyen</a></li>
+        
+        
+        
+      </div>
+    </div>
+    <div class="under-ft">
+      <div class="under-ft-text">All rights reserved 2023 BOOKING.COM</div>
+      
+    </div>
+
+     
+</body>
+
+</html>
