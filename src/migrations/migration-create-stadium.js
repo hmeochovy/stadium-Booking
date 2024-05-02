@@ -7,7 +7,7 @@ module.exports = {
     // address: DataTypes.STRING,
     // description: DataTypes.TEXT,
     // image: DataTypes.STRING
-    await QueryInterface.createTable('Stadiums', {
+    await QueryInterface.createTable('Stadia', {
       id: {
         allowNull: false,
         autoIncrement:true,
@@ -42,6 +42,6 @@ module.exports = {
     })
   },
   down: async(queryInterface, Sequelize) => {
-    await queryInterface.dropTable('Stadiums');
+    await queryInterface.dropTable('Stadia');
   }
 };

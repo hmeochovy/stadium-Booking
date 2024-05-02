@@ -1,0 +1,22 @@
+
+services:
+  database-container:
+    image: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: 1
+      MYSQL_USER: hmeo
+      MYSQL_DATABASE: nodejsbasic
+      MYSQL_PASSWORD: 1
+    ports:
+      - "3307:3306"
+
+  phpmyadmin:
+    image: phpmyadmin
+    links:
+      
+      - database-container
+    ports:
+      - "3001:80"
+    environment:
+      PMA_HOST: database-container 
+      MYSQL_ROOT_PASSWORD: 

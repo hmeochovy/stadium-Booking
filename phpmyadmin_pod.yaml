@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: phpmyadmin-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: abcd
+  template:
+    metadata:
+      labels:
+        app: abcd
+    spec:
+      containers:
+      - image: phpmyadmin
+        name: abcd
+        ports:
+        - containerPort: 80
+        env:
+        - name: PMA_HOST
+          value: sql-app
+
+---          
+apiVersion: v1
+kind: Service
+metadata:
+  name: phpmyadmin-service
+spec:
+  type: NodePort
+  selector:
+    app: phpmyadmin
+  ports:
+    - port: 80
+      targetPort: 80
+      nodePort: 32004

@@ -1,0 +1,36 @@
+
+services:
+  database-container:
+    image: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: 1
+      MYSQL_USER: hmeo
+      MYSQL_DATABASE: nodejsbasic
+      MYSQL_PASSWORD: 1
+    ports:
+      - "3307:3306"
+    expose:
+      - 3306
+
+  phpmyadmin:
+    image: phpmyadmin
+    links:
+      
+      - database-container
+    ports:
+      - "3001:80"
+    environment:
+      PMA_HOST: database-container 
+      MYSQL_ROOT_PASSWORD: 
+
+  backend:
+    build:
+      context: ../../
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    
+    environment:
+      - DB_PORT=3306
+      - DB_HOST=database-container
+    ports:
+      - 8078:8081

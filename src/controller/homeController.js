@@ -3,6 +3,7 @@ import db from '../models/index'
 import CRUDservice from '../service/CRUDservice'
 import e from 'express'
 import { where } from 'sequelize';
+var nodemailer = require('nodemailer')
 const bcrypt = require('bcrypt');
 const saltRounds = 10;
 const myPlaintextPassword = 's0/\/\P4$$w0rD';
@@ -183,6 +184,22 @@ let createStadium = async (req, res) => {
 let bookingStadium = async (req, res) => {
     try {
         await db.sequelize.transaction(async (t) => {
+            var transporter = nodemailer.createTransport({
+                host: 'smtp.gmail.com',
+                port: 587,
+                auth: {
+                    user: 'hoangnguyenquoc123@gmail.com',
+                    pass: 'obayikhexeytocwk'
+                }
+            })
+            var mailOptions = {
+                from: 'hoangnguyenquoc123@gmail.com', 
+                to: 'hoangnguyenquoc321@gmail.com',
+                subject: 'Đặt sân thành công',
+                text: 'today is the good day to win', 
+                html: `<br><h1>Bạn đã đặt sân bóng thành công</h1><br><p>Hãy đến sân đúng giờ nhé</p>`
+                
+            }
             let isHasBooking = await db.Booking.findOne({
                 where: { date: req.body.date, time: req.body.time }
             })
@@ -198,6 +215,14 @@ let bookingStadium = async (req, res) => {
                     date: req.body.date,
                     time: req.body.time,
                     nameStadium: req.body.nameStadium
+                })
+                transporter.sendMail(mailOptions, function(error, info){ 
+                    if(error){
+                        console.log(error)
+                    }
+                    else {
+                        console.log('Email sent: ' + info.response)
+                    }
                 })
                 res.redirect('/home?page=1')
             }
